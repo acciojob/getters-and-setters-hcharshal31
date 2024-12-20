@@ -1,14 +1,14 @@
 class Person {
   constructor(name, age) {
-    this.name = name;
-    this.age = age;
+    this._name = name; // Private property with an underscore
+    this._age = age;   // Private property with an underscore
   }
 
-  get getName() {
+  get name() {
     return this._name;
   }
 
-  set setAge(age) {
+  set age(age) {
     this._age = age;
   }
 }
@@ -25,11 +25,11 @@ class Teacher extends Person {
   }
 }
 
-const person = new Person("John", 25);
+const person = new Person("John", 30);
 console.log(person.name);
 
-person.setAge = 30;
-console.log(person.age);
+person.age = 30;
+console.log(person._age);
 
 const student = new Student("Alice", 22);
 student.study();
